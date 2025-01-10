@@ -47,11 +47,11 @@ def main():
 
     # Configurar Modelo
     model_config = BERT.get_default_config()
-    model_config.model_type = None  # **Adicionado para desativar o model_type**
+    model_config.model_type = None  # Desativar model_type para satisfazer a asserção
     model_config.n_layer = 6
     model_config.n_head = 6
     model_config.n_embd = 192
-    model_config.vocab_size = len(tokenizer.encoder.encoder)  # Modificado aqui
+    model_config.vocab_size = len(tokenizer.encoder.encoder)  # Acessar o dicionário interno
     model_config.block_size = 256
     model_config.num_classes = 2  # Número de classes para classificação
     model = BERT(model_config)
