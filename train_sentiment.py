@@ -46,7 +46,7 @@ def main():
     model_config.n_layer = 6
     model_config.n_head = 6
     model_config.n_embd = 192
-    model_config.vocab_size = len(tokenizer.encoder)
+    model_config.vocab_size = len(tokenizer.encoder.encoder)  # Modificado aqui
     model_config.block_size = 256
     model_config.num_classes = 2  # Número de classes para classificação
     model = BERT(model_config)
