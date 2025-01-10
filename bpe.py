@@ -121,6 +121,9 @@ class Encoder:
         text = tokens_bytes.decode('utf-8', errors='replace')
         return text
 
+    def __len__(self):
+        return len(self.encoder)  # Permite usar len(tokenizer.encoder)
+
 def get_file(local_file, remote_file):
     if not os.path.isfile(local_file):
         print(f"downloading {remote_file} to {local_file}")
